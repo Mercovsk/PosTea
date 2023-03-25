@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import secret
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,9 +90,9 @@ DATABASES = {
     "default": {
         "ENGINE": "mssql",
         "NAME": "PosTea_DB",
-        "USER": "mercovsk",
-        "PASSWORD": "1234",
-        "HOST": "ROVIC",
+        "USER": secret.DB_USER,
+        "PASSWORD": secret.DB_PASS,
+        "HOST": secret.DB_HOST,
         "PORT": "",
     },
 }
